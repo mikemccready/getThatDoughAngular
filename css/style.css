@@ -1,0 +1,71 @@
+html {
+
+}
+
+body {
+	background: url(../scrougebg.jpg) no-repeat center center fixed;
+	background-size: cover;
+	font-family: 'Fjalla One', sans-serif;
+	font-weight: bolder;
+	text-align: center;	
+}
+
+#ban {
+	color: black;
+	font-size: 10vw;
+	line-height: .75em;
+	text-shadow: 0px 0px .1em #ffbf00;
+}
+
+#wrapper {
+	width: 80vw;
+	height: 80vw;
+	margin: 2em auto;
+	text-align: center;
+}
+
+#board {
+	text-align: center;
+	width: 100%;
+	max-width: 30em;
+	max-height: 30em;
+	margin: 0 auto;
+}
+
+.box {
+	height: 25vw;
+	width: 32%;
+	float: left;
+	background-color: rgba(255,255,255,.33);
+	border: #ffbf00 solid 2px;
+	font-size: 20vw;
+	max-height: 9em;
+}
+
+.announce  {
+	background-image: url(../work.gif);
+	background-size: cover;
+	z-index: 2000;
+	
+}
+
+
+
+/*
+		document.getElementById('announce').style.backgroundImage = 'url(work.gif)';	
+		document.getElementById('board').style.display = 'none';
+		document.getElementById('ban').style.fontSize = '30vw';
+		document.getElementById('ban').style.marginTop = '.5em';
+		document.getElementById('ban').style.lineHeight = '1em';*/
+
+.box img {
+	width: 1em;
+	z-index: 1000;
+
+}
+
+.unpicked {
+	background-image: url("http://www.ssgreenberg.name/Drupal/Drupal/sites/default/files/StevesTutorials/money-bags.png");
+	background-size: cover;
+	background-position:  center center;
+}
