@@ -7,13 +7,15 @@ angular
     
     	self.boxes = [{text:"", bag:true},{text:"", bag:true},{text:"", bag:true},{text:"", bag:true},{text:"", bag:true},{text:"", bag:true},{text:"", bag:true},{text:"", bag:true},{text:"", bag:true}]
         self.win = false;
-    	
-
+        self.board = true;
         self.turn = false;
+        self.resetButton = false;
+        self.tallyX = "0";
+        self.tallyO = "0";
 
         self.checkWin = function(){
             if( 
-                (     //check rows for x
+                    //check rows for x
                       ((self.boxes[0].text === "x") && (self.boxes[1].text === "x") && (self.boxes[2].text === "x"))
                     ||((self.boxes[3].text === "x") && (self.boxes[4].text === "x") && (self.boxes[5].text === "x"))
                     ||((self.boxes[6].text === "x") && (self.boxes[7].text === "x") && (self.boxes[8].text === "x"))
@@ -24,9 +26,16 @@ angular
                       //check diags for x
                     ||((self.boxes[0].text === "x") && (self.boxes[4].text === "x") && (self.boxes[8].text === "x"))
                     ||((self.boxes[2].text === "x") && (self.boxes[4].text === "x") && (self.boxes[6].text === "x"))
-                )
-                ||
-                (     //check rows for x
+            )            
+            {
+                self.win = true;
+                self.board = false;
+                document.getElementsByClassName('winScreen')[0].innerHTML = '<iframe height="0" width="0" frameborder="0" src="https://www.youtube.com/embed/iSJv10QN_8g?autoplay=1"></iframe>';
+                self.resetButton = true;
+                self.tallyX ++;
+                console.log('X wins')               
+            }  
+            else if(   //check rows for x
                       ((self.boxes[0].text === "o") && (self.boxes[1].text === "o") && (self.boxes[2].text === "o"))
                     ||((self.boxes[3].text === "o") && (self.boxes[4].text === "o") && (self.boxes[5].text === "o"))
                     ||((self.boxes[6].text === "o") && (self.boxes[7].text === "o") && (self.boxes[8].text === "o"))
@@ -37,20 +46,16 @@ angular
                       //check diags for x
                     ||((self.boxes[0].text === "o") && (self.boxes[4].text === "o") && (self.boxes[8].text === "o"))
                     ||((self.boxes[2].text === "o") && (self.boxes[4].text === "o") && (self.boxes[6].text === "o"))
-                )                
-
-            )
-
+            )                
             {
-                self.win = true
-                console.log('win')
-        document.getElementById('board').style.display = 'none';
-        document.getElementById('ban').style.fontSize = '30vw';
-        document.getElementById('ban').style.marginTop = '.5em';
-        document.getElementById('ban').style.lineHeight = '1em';                
-            }            
+                self.win = true;
+                self.board = false;
+                self.resetButton = true;
+                self.tallyO ++;
+                console.log('O wins')                
+            }
+        }                   
 
-        }
 
     	self.playerMove = function(i){
             if (self.boxes[i].text !== ""){
@@ -58,16 +63,26 @@ angular
             }else if (self.turn === false){
                 self.boxes[i].text="x";
                 self.boxes[i].bag=false;
-                console.log("x");
+                console.log("X");
                 self.turn = true;
             }else {
                 self.boxes[i].text= "o"; 
                 self.boxes[i].bag=false;                               
-                console.log("o"); 
+                console.log("O"); 
                 self.turn = false;
             }
             self.checkWin();
-        }; 
+        };
+
+        self.reset = function(){
+          self.boxes = [{text:"", bag:true},{text:"", bag:true},{text:"", bag:true},{text:"", bag:true},{text:"", bag:true},{text:"", bag:true},{text:"", bag:true},{text:"", bag:true},{text:"", bag:true}]
+          self.win = false;
+          self.board = true; 
+          self.resetButton = false;
+          document.getElementsByClassName('winScreen')[0].innerHTML = ''; 
+        }
+
+
 
 
     };      
