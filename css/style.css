@@ -1,4 +1,4 @@
-body {
+BODY {
 /*	background: url(../scrougebg.jpg) no-repeat center center fixed;
 	background-size: cover;*/
 	font-weight: bolder;
@@ -11,7 +11,7 @@ body {
 	font-size: 10vw;
 	line-height: .75em;
 	text-shadow: 0px 0px .1em #ffbf00;
-	margin: 1em 0 0;
+	margin: 1em 0 1em;
 	font-family: 'Playball', sans-serif;
 	color: black;
 }
@@ -95,65 +95,66 @@ body {
 	position: fixed;
 	left: 0;
 	right: 0;
-	z-index: 5000;
-	font-size: 2em;
-	padding: .5em 0;
+ 	bottom:2.5em;	
   	width: 83%;
-  	max-width: 30em;
+  	max-width: 30em; 	
+  	margin: 0 auto;  	
+  	z-index: 5000;
+	padding: .5em 0;
   	background-color: #ffbf00;
-  	margin: 0 auto;
-  	color: black;
- 	font-weight: bold;
+	font-size: 2em;  	
+	font-weight: bold;	
+	color: black;
  	letter-spacing: .05em;
- 	bottom:2.5em;
+
 }
 
 #button:hover {
   	background-color: black;
   	border: #ffbf00 solid 2px;
   	color: #ffbf00;
- 	border: rgba(0,0,0,.5) solid 2px; 
- 	
+ 	border: rgba(0,0,0,.5) solid 2px; 	
 }
 
 @media (min-width: 600px) {
+
+	#wrapper {
+		height: auto;
+		width: auto;
+		margin-left: 10em;
+	}
+
 	.box {
-	height: 9.75em;
-	width: 9.75em;
-	float: left;
-	font-size: 1em;
-}
-	
-#board {
+		height: 9.75em;
+		width: 9.75em;
+		float: left;
+		font-size: 1em;
+	}
+		
+	#board {
 
-	width: 33em;
-	height: 33em;
-	margin: 0 auto;
-	text-align: center;
-}
+		width: 33em;
+		height: 33em;
+		margin: 0 auto;
+		text-align: center;
+	}
 
-.score {
-position: fixed;
-  display: inline-block;
-  background-color: rgba(0,0,0,.5);
-  width: 7.5em;
-  height: 100vh;
-  bottom: 0;
-  left: 0;
-  z-index: 3000;
-  color: #ffbf00;
-}
+	.score {
+	position: fixed;
+	  display: inline-block;
+	  background-color: rgba(0,0,0,.5);
+	  width: 7.5em;
+	  height: 100vh;
+	  bottom: 0;
+	  left: 0;
+	}
 
-#player1Wins {
-	display: inline-block;
+	#player1Wins {
+		display: inline-block;
+	}
 
-}
-
-#player2Wins {
-	display: inline-block;
-
-}
-
-
+	#player2Wins {
+		display: inline-block;
+	}
 }
 
